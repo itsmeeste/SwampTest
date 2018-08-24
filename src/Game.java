@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 // This is going to handle the main game loop
@@ -51,7 +52,16 @@ public class Game
 			switch(currentGameState.ordinal()) // Gets the current enum state for the game
 			{
 				case 0:// Game Start
-					swamp = new BigSwamp(player.getPlayerX(),player.getPlayerY(),true,true,1);
+					Random r  = new Random();
+					if(r.nextInt(100) >50)
+					{
+						swamp = new BigSwamp(player.getPlayerX(),player.getPlayerY(),true,true,1);
+					}
+					else
+					{
+						swamp = new EmptySwamp(player.getPlayerX(),player.getPlayerY(),true);
+					}
+					
 					// When the game has started it will ask for the player name
 					inputSystem.printSystemCalls(InputSystem.printCalls.ASKPLAYERNAME);
 					player.setPlayerName(inputSystem.getSystemInput());

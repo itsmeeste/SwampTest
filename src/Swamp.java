@@ -63,7 +63,8 @@ public abstract class Swamp
 	{
 		// Choose a random number between the value 0- swampSaying size
 		Random r = new Random();
-		return swampSayings.get(r.nextInt(swampSayings.size()));
+		int random = r.nextInt(swampSayings.size());
+		return swampSayings.get(random);
 	}
 	
 	public String ChanceToSaySomething()

@@ -2,10 +2,13 @@
 public class BigSwamp extends Swamp{
 
 	
-	
+	private boolean doesSmell;
+	private boolean hasRats;
 	public BigSwamp(int x,int y,boolean doesSmell, boolean hasRats,int distance) 
 	{
 		super(x,y);
+		this.doesSmell = doesSmell;
+		this.hasRats = hasRats;
 		// Check to see if there was rats on the swamp so can add sayings about it
 		if(doesSmell)
 		{
